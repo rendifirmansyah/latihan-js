@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM</title>
+</head>
+<body>
+	<center>
+		<h1>DOM Operation</h1>
+	</center>
+	<input type="text" name="sekolah" id="sekolah">
+
+	<script type="text/javascript">
+		document.getElementById('sekolah').value="smkn 10 jakarta";
+	</script>
+
+	<input type="text" name="alamat" id="alamat">
+	<button onclick="assign_text()">assign</button>
+
+	<script type="text/javascript">
+		function assign_text(){
+			document.getElementById('alamat').value="jalan smea 6";
+		}
+	</script>
+
+	<textarea name="summary" id="summary"></textarea>
+	<button onclick="join_move()">pencet</button>
+	<script type="text/javascript">
+		function join_move(){
+			document.getElementById('summary').value=
+			document.getElementById('sekolah').value+"\n"+
+			document.getElementById('alamat').value;
+		}
+	</script>
+
+	<br><br>
+
+	<input type="text" name="jumlah" id="jumlah" oninput="settozero()">
+	<button onclick="inc()">+</button>
+	<button onclick="dec()">-</button>
+
+	<script type="text/javascript">
+		document.getElementById('jumlah').value =0;
+		function inc(){
+			var jumlah = document.getElementById('jumlah').value;
+			document.getElementById('jumlah').value = parseInt(jumlah)+100;
+		}
+		function dec(){
+			var jumlah = document.getElementById('jumlah').value;
+			document.getElementById('jumlah').value = parseInt(jumlah)-100;
+		}
+		function settozero(){
+			if(document.getElementById('jumlah').value=="");
+			document.getElementById('jumlah').value =0;
+		}
+	</script>
+
+</body>
+</html>
